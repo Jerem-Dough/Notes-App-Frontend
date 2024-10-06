@@ -9,13 +9,13 @@ const Header = ({ darkMode, setDarkMode }) => {
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: '10px 20px',
-        backgroundColor: darkMode ? '#6a1b9a' : '#1976d2', // Purple in dark mode, blue in light mode
+        backgroundColor: darkMode ? '#6a1b9a' : '#1976d2',
         borderRadius: '8px',
         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
         marginBottom: '20px',
-        width: '100%', // Adjust the width to match design
+        width: '100%',
         marginLeft: 'auto',
-        marginRight: 'auto', // Center the header horizontally
+        marginRight: 'auto',
         color: '#ffffff',
       }}
     >
