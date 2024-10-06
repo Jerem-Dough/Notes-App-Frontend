@@ -3,6 +3,8 @@ import { Button, Container, Typography, Box } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 
+const apiUrl = process.env.REACT_APP_API_BASE_URL;
+
 const Dashboard = ({ darkMode, setDarkMode }) => {
   const [notes, setNotes] = useState([]);
   const navigate = useNavigate();
@@ -11,7 +13,7 @@ const Dashboard = ({ darkMode, setDarkMode }) => {
   useEffect(() => {
     const fetchNotes = async () => {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:5000/api/notes', {
+      const response = await fetch(`${apiUrl}/api/notes`, {
         headers: { 'Authorization': `Bearer ${token}` },
       });
       const data = await response.json();
