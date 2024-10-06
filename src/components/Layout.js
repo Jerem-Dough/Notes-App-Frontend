@@ -3,7 +3,6 @@ import { Container } from '@mui/material';
 import { Outlet, useLocation } from 'react-router-dom';
 
 const Layout = () => {
-  const location = useLocation();
   const isLoggedIn = !!localStorage.getItem('token'); 
 
   return (
