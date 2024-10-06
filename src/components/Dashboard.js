@@ -109,7 +109,7 @@ const Dashboard = ({ darkMode, setDarkMode }) => {
                 }}
                 onClick={async () => {
                   const token = localStorage.getItem('token');
-                  await fetch(`http://localhost:5000/api/notes/${note._id}`, {
+                  await fetch(`${apiUrl}/api/notes/${note._id}`, {
                     method: 'DELETE',
                     headers: {
                       'Authorization': `Bearer ${token}`,
