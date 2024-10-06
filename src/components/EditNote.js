@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { TextField, Button, Container, Typography } from '@mui/material';
 import { useNavigate, useParams } from 'react-router-dom';
 
+const apiUrl = process.env.REACT_APP_API_BASE_URL;
+
 const EditNote = () => {
   const { id } = useParams(); 
   const [title, setTitle] = useState('');
@@ -12,7 +14,7 @@ const EditNote = () => {
   useEffect(() => {
     const fetchNote = async () => {
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api/notes/${id}`, {
+      const response = await fetch(`${apiUrl}/api/notes`, {
         headers: { 'Authorization': `Bearer ${token}` },
       });
       const data = await response.json();
@@ -33,7 +35,7 @@ const EditNote = () => {
     const token = localStorage.getItem('token');
     const updatedNote = { title, content };
 
-    const response = await fetch(`http://localhost:5000/api/notes/${id}`, {
+    const response = await fetch(`${apiUrl}/api/notes`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
