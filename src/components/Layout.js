@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, Container } from '@mui/material';
+import { Container } from '@mui/material';
 import { Outlet, useLocation } from 'react-router-dom';
 
 const Layout = () => {
