@@ -5,16 +5,16 @@ import { useNavigate, useParams } from 'react-router-dom';
 const apiUrl = process.env.REACT_APP_API_BASE_URL;
 
 const EditNote = () => {
-  const { id } = useParams(); 
+  const { id } = useParams();  // Note ID from the URL params
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const navigate = useNavigate();
 
- 
+  // Fetch the specific note by ID when the component loads
   useEffect(() => {
     const fetchNote = async () => {
       const token = localStorage.getItem('token');
-      const response = await fetch(`${apiUrl}/api/notes`, {
+      const response = await fetch(`${apiUrl}/api/notes/${id}`, {  // Fetch note by ID
         headers: { 'Authorization': `Bearer ${token}` },
       });
       const data = await response.json();
@@ -27,15 +27,16 @@ const EditNote = () => {
     };
 
     fetchNote();
-  }, [id]);
+  }, [id]);  // Ensure it refetches if `id` changes
 
- 
+  // Handle the form submission to update the note
   const handleEditNote = async (e) => {
     e.preventDefault();
     const token = localStorage.getItem('token');
     const updatedNote = { title, content };
 
-    const response = await fetch(`${apiUrl}/api/notes`, {
+    // Send the PUT request to update the specific note by ID
+    const response = await fetch(`${apiUrl}/api/notes/${id}`, {  // Update note by ID
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -45,7 +46,7 @@ const EditNote = () => {
     });
 
     if (response.ok) {
-      navigate('/');
+      navigate('/');  // Navigate back to the homepage or notes list
     } else {
       console.error('Error updating note:', await response.json());
     }
