@@ -3,12 +3,12 @@ import { TextField, Button, Container, Typography } from '@mui/material';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const EditNote = () => {
-  const { id } = useParams();  // Get the note ID from the URL
+  const { id } = useParams(); 
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const navigate = useNavigate();
 
-  // Fetch the note data when the component mounts
+ 
   useEffect(() => {
     const fetchNote = async () => {
       const token = localStorage.getItem('token');
@@ -27,7 +27,7 @@ const EditNote = () => {
     fetchNote();
   }, [id]);
 
-  // Handle editing the note
+ 
   const handleEditNote = async (e) => {
     e.preventDefault();
     const token = localStorage.getItem('token');
@@ -43,7 +43,7 @@ const EditNote = () => {
     });
 
     if (response.ok) {
-      navigate('/');  // Redirect to home after editing
+      navigate('/');
     } else {
       console.error('Error updating note:', await response.json());
     }
