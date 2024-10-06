@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { TextField, Button, Container, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import Header from './Header';  // Import the shared Header component
+import Header from './Header';
 
 const CreateNote = ({ darkMode, setDarkMode }) => {
   const [title, setTitle] = useState('');
@@ -41,10 +41,10 @@ const CreateNote = ({ darkMode, setDarkMode }) => {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           InputProps={{
-            style: { color: darkMode ? '#ffffff' : '#000000' },  // White text in dark mode
+            style: { color: darkMode ? '#ffffff' : '#000000' },
           }}
           InputLabelProps={{
-            style: { color: darkMode ? '#ffffff' : '#000000' },  // White label in dark mode
+            style: { color: darkMode ? '#ffffff' : '#000000' },
           }}
         />
         <TextField
@@ -56,10 +56,10 @@ const CreateNote = ({ darkMode, setDarkMode }) => {
           value={content}
           onChange={(e) => setContent(e.target.value)}
           InputProps={{
-            style: { color: darkMode ? '#ffffff' : '#000000' },  // White text in dark mode
+            style: { color: darkMode ? '#ffffff' : '#000000' },
           }}
           InputLabelProps={{
-            style: { color: darkMode ? '#ffffff' : '#000000' },  // White label in dark mode
+            style: { color: darkMode ? '#ffffff' : '#000000' },
           }}
         />
         <Button
