@@ -3,6 +3,8 @@ import { TextField, Button, Container, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 
+const apiUrl = process.env.REACT_APP_API_BASE_URL;
+
 const CreateNote = ({ darkMode, setDarkMode }) => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
@@ -12,7 +14,7 @@ const CreateNote = ({ darkMode, setDarkMode }) => {
     e.preventDefault();
     const token = localStorage.getItem('token');
 
-    const response = await fetch('http://localhost:5000/api/notes', {
+    const response = await fetch(`${apiUrl}/api/notes`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
