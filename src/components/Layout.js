@@ -4,11 +4,10 @@ import { Outlet, useLocation } from 'react-router-dom';
 
 const Layout = () => {
   const location = useLocation();
-  const isLoggedIn = !!localStorage.getItem('token');  // Check if the user is logged in
+  const isLoggedIn = !!localStorage.getItem('token'); 
 
   return (
     <>
-      {/* Main content goes here */}
       <Container maxWidth="lg" style={{ marginTop: isLoggedIn ? '40px' : '0' }}>
         <Outlet />
       </Container>
