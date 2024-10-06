@@ -47,13 +47,13 @@ const Login = () => {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        minHeight: '90vh',  // Reduce the height to raise the entire content
-        backgroundColor: 'var(--background-color)',  // Use the variable for background color
+        minHeight: '90vh',
+        backgroundColor: 'var(--background-color)',
         padding: 0,
         margin: 0,
       }}
     >
-      {/* Dark mode toggle */}
+      {}
       <Box sx={{ position: 'absolute', top: 20, right: 20 }}>
         <Typography variant="body1" component="div" sx={{ color: 'var(--text-color)' }}>
           Dark Mode
@@ -65,7 +65,7 @@ const Login = () => {
         />
       </Box>
 
-      {/* Header */}
+      {}
       <Typography variant="h3" gutterBottom style={{ whiteSpace: 'nowrap', color: 'var(--text-color)' }}>
         Jeremy's Notes App
       </Typography>
@@ -77,7 +77,7 @@ const Login = () => {
           padding: '20px',
           borderRadius: '8px',
           boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-          backgroundColor: 'var(--box-background-color)',  // Use variable for box background
+          backgroundColor: 'var(--box-background-color)',
           textAlign: 'center',
         }}
       >
