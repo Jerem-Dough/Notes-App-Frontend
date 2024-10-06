@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Container, Typography, Box } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import Header from './Header';  // Import the new Header component
+import Header from './Header';
 
 const Dashboard = ({ darkMode, setDarkMode }) => {
   const [notes, setNotes] = useState([]);
   const navigate = useNavigate();
 
-  // Fetch notes when the component mounts
+
   useEffect(() => {
     const fetchNotes = async () => {
       const token = localStorage.getItem('token');
@@ -23,14 +23,14 @@ const Dashboard = ({ darkMode, setDarkMode }) => {
 
   return (
     <Container sx={{ paddingTop: '20px', minHeight: '100vh', maxHeight: '100vh', overflowY: 'auto' }}>
-      {/* Use the shared Header component */}
+      {}
       <Header darkMode={darkMode} setDarkMode={setDarkMode} />
 
       {/* Notes Section */}
       <Box sx={{ textAlign: 'center', marginBottom: '20px' }}>
         <Typography variant="h4" gutterBottom>Your Notes</Typography>
 
-        {/* Button to create a new note */}
+        {}
         <Button
           variant="contained"
           sx={{
@@ -47,13 +47,13 @@ const Dashboard = ({ darkMode, setDarkMode }) => {
         </Button>
       </Box>
 
-      {/* Notes Grid */}
+      {}
       <Box
         sx={{
           display: 'flex',
-          flexDirection: 'column', // Stack notes vertically
-          gap: '20px',  // Space between notes
-          overflowY: 'auto',  // Enable scrolling for the notes section
+          flexDirection: 'column',
+          gap: '20px',
+          overflowY: 'auto',
         }}
       >
         {notes.length > 0 ? (
@@ -66,9 +66,9 @@ const Dashboard = ({ darkMode, setDarkMode }) => {
                 borderRadius: '8px',
                 boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
                 textAlign: 'left',
-                wordWrap: 'break-word',  // Ensure long text breaks properly
-                overflowWrap: 'anywhere',  // Allow text to break within words
-                minWidth: '300px',  // Set a minimum width for notes
+                wordWrap: 'break-word',
+                overflowWrap: 'anywhere',
+                minWidth: '300px',
               }}
             >
               <Typography variant="h6" sx={{ marginBottom: '10px' }}>
@@ -78,11 +78,11 @@ const Dashboard = ({ darkMode, setDarkMode }) => {
                 {note.content}
               </Typography>
 
-              {/* Edit Button */}
+              {}
               <Button
                 variant="outlined"
                 sx={{
-                  color: darkMode ? '#6a1b9a' : '#1976d2',  // Purple in dark mode, blue in light mode
+                  color: darkMode ? '#6a1b9a' : '#1976d2',
                   borderColor: darkMode ? '#6a1b9a' : '#1976d2',
                   '&:hover': {
                     backgroundColor: darkMode ? '#5a1281' : '#115293',
@@ -95,11 +95,11 @@ const Dashboard = ({ darkMode, setDarkMode }) => {
                 Edit
               </Button>
 
-              {/* Delete Button */}
+              {}
               <Button
                 variant="contained"
                 sx={{
-                  backgroundColor: '#d32f2f', // Red for delete button
+                  backgroundColor: '#d32f2f',
                   color: '#ffffff',
                   '&:hover': {
                     backgroundColor: '#b71c1c',
